@@ -1,6 +1,6 @@
 # Alpha X QQQ intraday submission: notes for reviewers (Edge Lab, Group 6)
 
-Start with the executed notebook `AlphaX_QQQ_Intraday_Research_v4_final.ipynb` in this folder. This file explains how the figures on the form were produced and where they depart from the form's wording.
+Start with the executed notebook `60_submission/AlphaX_QQQ_Intraday_Research_v4_final.ipynb` (an HTML copy is next to it). This file explains how the figures on the form were produced and where they depart from the form's wording.
 
 ## Strategy and candidates
 
@@ -22,7 +22,7 @@ The form's backtest page reports C1.
 | Profit factor | 1.25 | gross profit / gross loss over completed trades |
 | Average hold | 2 to 5 days | mean 31 hourly bars (about 4.4 sessions, 6.4 calendar days); maximum 35 bars |
 
-Source files: `../40_results/V4_results.csv`, `../40_results/V4_trades.csv`, `../40_results/V4_daily_pnl_full.csv`, and the ledgers `C1_FULL_trade_ledger.csv` and `F3_FULL_trade_ledger.csv`. The notebook recomputes everything and matches the stored ledgers to under 1e-12 USD.
+Source files: `40_results/V4_results.csv`, `40_results/V4_trades.csv`, `40_results/V4_daily_pnl_full.csv`, and the ledgers `60_submission/C1_FULL_trade_ledger.csv` and `60_submission/F3_FULL_trade_ledger.csv`. The notebook recomputes everything and matches the stored ledgers to under 1e-12 USD.
 
 ## Departures from the form's wording
 
@@ -46,8 +46,8 @@ Full-span Sharpe 0.51 against a pre-registered bar of 0.5; t-statistic about 1.3
 
 ## Reproducibility
 
-Pre-registration hashes, run-once lock files and engine fingerprints are in `../00_rules`, `../90_logs` and the notebook's first section. Code is in `../20_src`. Raw data (`10_data`: IBKR hourly bars and a snapshot of Flywheel files) is not hosted; `../20_src/fetch_ibkr_hourly.py` and `../20_src/fetch_r2_snapshot.py` show how it was obtained.
+Pre-registration hashes, run-once lock files and engine fingerprints are in `00_rules`, `90_logs` and the notebook's first section. Code is in `20_src`. Raw data (`10_data`: IBKR hourly bars and a snapshot of Flywheel files) is not hosted; `20_src/fetch_ibkr_hourly.py` and `20_src/fetch_r2_snapshot.py` show how it was obtained.
 
 ## Paper trading
 
-No IBKR paper orders were placed. A read-only forward shadow watcher (`../20_src/paper_shadow_watch.py`, configuration `../00_rules/FROZEN_CONFIG_C1_SHADOW.json`) was tested on 16 and 17 Nov 2026 and recorded no signals. It was not running continuously from the official start date of 18 Nov because of a market-data session conflict, so there is no forward record and no brokerage statement. The strategy trades about 3 times a month, so a 10-trade paper record was not reachable by the deadline.
+No IBKR paper orders were placed. A read-only forward shadow watcher (`20_src/paper_shadow_watch.py`, configuration `00_rules/FROZEN_CONFIG_C1_SHADOW.json`) was tested on 16 and 17 Nov 2026 and recorded no signals. It was not running continuously from the official start date of 18 Nov because of a market-data session conflict, so there is no forward record and no brokerage statement. The strategy trades about 3 times a month, so a 10-trade paper record was not reachable by the deadline.
