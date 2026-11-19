@@ -1,0 +1,3 @@
+# Fallback ONLY if IBKR does not return VIX / VIX3M index bars and the R2 snapshot (ends 2026-11-11) is stale.
+# One row per session with the official daily CLOSE of each index. Without the previous session's pair, new dips are logged as "NO ENTRY: gate data missing".
+date,vix,vix3m

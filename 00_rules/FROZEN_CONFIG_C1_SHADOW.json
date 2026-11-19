@@ -1,0 +1,36 @@
+{
+  "frozen_on": "2026-11-17",
+  "owner_go": "kt, 2026-11-17: 'both side by side' (submit C1 and F3) and 'proceed' (read-only forward shadow log; no orders)",
+  "candidate": "C1: QQQ hourly dip-buy + VIX/VIX3M gate + F3_EVENT, hold 35 bars (v4 definition, unchanged)",
+  "status": "EXPLORATORY and marginal. Designed after the final window had been seen (second-use window). Pre-registered v4 label: SUPPORTED (Sharpe 0.514 on 2020-01-03..2026-11-12; final-window block weak). The forward shadow log is its only independent evidence.",
+  "rule": {
+    "symbol": "QQQ", "bars": "IBKR 1h regular trading hours",
+    "N_bars": 7, "k_drop": 0.012, "H_bars": 35, "stop_close_below_entry": 0.03,
+    "gate": "VIX/VIX3M close of the previous session < 1.0 (missing or stale gate data = no entry, same as the backtest engine)",
+    "entry": "open of the bar after the signal bar", "exit": "after H bars (open of next bar) or when a bar closes <= entry*(1-3%)",
+    "unit_usd": 100000, "fee_per_side": 0.001, "stress_fee_per_side": 0.002, "compounding": false,
+    "F3_EVENT": "skip entries whose ENTRY DAY (ET) has an event in the list below"
+  },
+  "F3_event_rules": [["equals", "Fed Interest Rate Decision"], ["startswith", "Non Farm Payrolls"], ["startswith", "Inflation Rate MoM"]],
+  "hand_added_event_days_et": [
+    {"date": "2026-11-06", "event": "Non Farm Payrolls (Oct) = BLS Employment Situation, 8:30 ET", "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm"},
+    {"date": "2026-11-10", "event": "Inflation Rate MoM (Oct) = BLS Consumer Price Index, 8:30 ET", "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm"}
+  ],
+  "shadow": {
+    "start_date_et": "2026-11-18",
+    "applies_to": ["C1 (H35, this file)", "F3 (H21, frozen in FROZEN_CONFIG_OOS.json on 2026-11-17)"],
+    "mode": "read-only signal log. This software places NO orders and uses a read-only API connection.",
+    "data_feed": "IBKR TWS/Gateway read-only, port 4003, clientId 9201; VIX/VIX3M from IBKR index bars, else the R2 snapshot, else 50_paper/vix_manual.csv",
+    "hypothetical_fill": "open of the bar after the signal bar, 0.10% per side, USD 100,000 unit",
+    "events_beyond_verified_date": "entries are logged with event_status UNVERIFIED until the official Fed/BLS calendars have been checked for that date (50_paper/events_verified_through.txt and events_manual.csv)",
+    "every_dip_is_logged": "including dips that were not traded, with the reason (gate closed, blocked by F3, already in position, data missing)"
+  },
+  "references": {
+    "PRE_REGISTRATION_v4_sha256": "159ff438a3ea10284dd9be512185ec686a2601a63997ddec9976aeff8804474d",
+    "run_v4_candidates_sha256": "c68469019366c937c93197c30efc545d322386bd0857be2f3a1205fc0669c37e",
+    "alphax_engine_v2_sha256": "1980e11e5e475b17d5a2eb60af3ec2d4c1e2c6caeca7075f5abc6fcaada2016b",
+    "FROZEN_CONFIG_OOS_sha256": "c3d4bd2ed3d8874032b1968fa412e932bc4a4938c406454f94fa82fa26a3894c"
+  },
+  "reporting_rule": "Every logged row is reported as it comes out, including losing trades, unverified-calendar rows and dips that were not traded. No parameter, filter or date list changes after this file is hashed; the log is append-only.",
+  "paper_orders": "None. Real paper orders on the new paper account (port 4004) would be a separate step that needs kt's explicit approval and its own written order policy."
+}

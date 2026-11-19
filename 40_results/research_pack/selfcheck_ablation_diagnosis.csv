@@ -1,0 +1,3 @@
+test,all_pass
+"gate-OFF IS selfchecks, engine_v1 as-is",False
+"gate-OFF IS selfchecks, gate_on=False passed to re-runs (monkeypatch, engine file unchanged)",True

@@ -1,0 +1,2 @@
+n_draws,event_days_blocked_in_window,F3_sharpe,placebo_median_sharpe,share_of_draws_with_sharpe_ge_F3
+500,120,0.1620723247684048,-0.012098760092053403,0.13

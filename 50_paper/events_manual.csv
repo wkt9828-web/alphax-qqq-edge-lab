@@ -1,0 +1,5 @@
+# F3 event days added by hand from official calendars on 2026-11-17 (the Flywheel calendar ends 5 Nov). One row per event day, ET.
+date,event,source
+2026-12-04,Non Farm Payrolls (Nov) = BLS Employment Situation 8:30 ET,https://www.bls.gov/schedule/2026/12_sched_list.htm
+2026-12-09,Fed Interest Rate Decision (FOMC 8-9 Dec; decision day inferred from the Fed's usual pattern - confirm when the statement is posted),https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+2026-12-10,Inflation Rate MoM (Nov) = BLS Consumer Price Index 8:30 ET,https://www.bls.gov/schedule/2026/12_sched_list.htm

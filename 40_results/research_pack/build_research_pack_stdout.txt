@@ -1,0 +1,56 @@
+winner by pre-registered rule: N7_k1.2%_H21
+      config  IS_sharpe  IS_net_pct  IS_gate_pass  SEL_sharpe  SEL_net_pct                                                                                                            decision
+ N4_k0.8%_H7     -0.014       -0.23         False         NaN          NaN REJECTED at IS gate: Sharpe -0.01<0.80; net -0.2%<=0; 2x-cost net -19.4%<=0; concentrated: ex-top3<=0 and top3>=50%
+N4_k0.8%_H14      0.189        3.57         False         NaN          NaN                REJECTED at IS gate: Sharpe 0.19<0.80; 2x-cost net -12.2%<=0; concentrated: ex-top3<=0 and top3>=50%
+N4_k0.8%_H21      0.821       17.00          True       0.504         2.63                                                                        Eligible, lower SELECTION Sharpe than chosen
+ N4_k1.2%_H7     -0.158       -1.88         False         NaN          NaN REJECTED at IS gate: Sharpe -0.16<0.80; net -1.9%<=0; 2x-cost net -14.1%<=0; concentrated: ex-top3<=0 and top3>=50%
+N4_k1.2%_H14      0.376        6.01         False         NaN          NaN                 REJECTED at IS gate: Sharpe 0.38<0.80; 2x-cost net -4.2%<=0; concentrated: ex-top3<=0 and top3>=50%
+N4_k1.2%_H21      0.577       10.44         False         NaN          NaN                                       REJECTED at IS gate: Sharpe 0.58<0.80; concentrated: ex-top3<=0 and top3>=50%
+ N7_k0.8%_H7     -0.388       -6.66         False         NaN          NaN REJECTED at IS gate: Sharpe -0.39<0.80; net -6.7%<=0; 2x-cost net -25.1%<=0; concentrated: ex-top3<=0 and top3>=50%
+N7_k0.8%_H14      0.416        8.03         False         NaN          NaN                 REJECTED at IS gate: Sharpe 0.42<0.80; 2x-cost net -6.2%<=0; concentrated: ex-top3<=0 and top3>=50%
+N7_k0.8%_H21      1.160       24.94          True      -0.249        -1.24                                                          REJECTED at SELECTION: net -1.2% (needs >0 and >=8 trades)
+ N7_k1.2%_H7     -0.174       -2.20         False         NaN          NaN REJECTED at IS gate: Sharpe -0.17<0.80; net -2.2%<=0; 2x-cost net -15.6%<=0; concentrated: ex-top3<=0 and top3>=50%
+N7_k1.2%_H14      0.244        4.11         False         NaN          NaN                 REJECTED at IS gate: Sharpe 0.24<0.80; 2x-cost net -7.3%<=0; concentrated: ex-top3<=0 and top3>=50%
+N7_k1.2%_H21      0.837       16.08          True       0.681         2.88                                                                        CHOSEN: best SELECTION Sharpe among eligible
+reproduce CHOSEN N7 k1.2% H21: IS 16.0800 vs csv 16.0800 | SEL 2.8794 vs csv 2.8794
+reproduce N7 k0.8% H21 (best IS Sharpe): IS 24.9406 vs csv 24.9406 | SEL -1.2365 vs csv -1.2365
+reproduce N4 k0.8% H21 (runner-up): IS 17.0004 vs csv 17.0004 | SEL 2.6321 vs csv 2.6321
+                trades  net_pct  win_rate  worst_pct
+stage     year                                      
+IS        2023       2   -0.180     0.500     -0.935
+          2024      33    7.636     0.576     -3.535
+          2025      17    8.624     0.765     -3.587
+SELECTION 2025      10    2.879     0.700     -2.673
+exit reasons:
+          n  mean_net_pct
+reason                  
+stop     6        -3.353
+time    56         0.698
+exposure % of bars in market: {'IS': 36.9, 'SELECTION': 28.5}
+SELECTION chosen: total $2,879; top3 $6,603; ex-top3 $-3,723; winners 7 of 10
+any-bar entry, 21-bar hold, IS: mean net +0.092% per trade (n=2815)
+any-bar entry, 21-bar hold, SELECTION: mean net +0.113% per trade (n=714)
+gate ON  IS: trades 52 sharpe 0.837 net +16.08% maxDD -11.4%
+gate ON  SELECTION: trades 10 sharpe 0.681 net +2.88% maxDD -5.8%
+gate OFF IS: trades 61 sharpe 0.620 net +17.26% maxDD -19.9%
+gate OFF SELECTION: trades 11 sharpe 1.009 net +4.36% maxDD -5.7%
+gate-OFF IS selfchecks with unpatched engine_v1: False | with gate_on=False passed through: True
+  [PASS] fills_after_signal
+  [PASS] no_overlap
+  [PASS] pnl_reconciles
+  [PASS] daily_equals_bar_sum
+  [PASS] fixed_notional_entries
+  [FAIL] truncation_test
+  [FAIL] future_perturbation_test
+  [PASS] cost_monotonic
+
+  [PASS] fills_after_signal
+  [PASS] no_overlap
+  [PASS] pnl_reconciles
+  [PASS] daily_equals_bar_sum
+  [PASS] fixed_notional_entries
+  [PASS] truncation_test
+  [PASS] future_perturbation_test
+  [PASS] cost_monotonic
+
+done -> /sessions/rcw-01qyh5me3plnvidqsqnvfc4n/mnt/Quant/AlphaX_Intraday_Nov2026/40_results/research_pack

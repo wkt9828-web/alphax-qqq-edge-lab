@@ -1,0 +1,2 @@
+sharpe,net_pct,max_dd_pct,trades,win_rate,profit_factor,worst_trade_pct,mean_trade_pct,top3_share,pnl_ex_top3,variant,stage,selfchecks_pass,net_pct_2x_cost,SEL_PASS
+2.301041237740757,9.872728019771,-3.017259563818645,10,0.8,4.004194867023233,-2.673084200567651,0.9872728019770997,1.0332158386984382,-327.9309414182644,F3_EVENT,SELECTION,True,7.860843407138593,True
