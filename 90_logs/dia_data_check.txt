@@ -1,0 +1,19 @@
+DIA file: 12271 bars 2019-11-13 09:30:00-05:00 -> 2026-11-12 15:00:00-05:00 | QQQ calendar: 1759 sessions 2019-11-13 -> 2026-11-12
+bars/day: mode=7 counts={7: 1745, 4: 14}
+sessions QQQ has but DIA lacks (from 2020-01-02): 0 []
+sessions DIA has but QQQ lacks: 0 []
+sessions whose bar count differs from QQQ: 0
+first-bar start times: {'09:30': 1759}
+correlation of daily open-to-close moves DIA vs QQQ: 0.766 over 1759 sessions
+
+  [PASS] no_data_after_window_end
+  [PASS] last_session_is_window_end
+  [PASS] starts_by_2019_12_10
+  [PASS] no_duplicate_bars
+  [PASS] no_nan_ohlc
+  [PASS] high_ge_low
+  [PASS] no_missing_sessions_vs_QQQ
+  [PASS] no_extra_sessions_vs_QQQ
+  [PASS] bar_counts_match_QQQ
+  [PASS] dia_qqq_daily_corr_gt_0.7
+ALL PASS

@@ -1,0 +1,20 @@
+OOS file: 1884 bars 2025-10-17 09:30:00-04:00 -> 2026-11-12 15:00:00-05:00
+bars/day: mode=7 counts={7: 268, 4: 2}
+sessions in R2 daily 2025-11-03..2026-11-11: 258 | missing in IBKR: 0 []
+sessions after the last R2 daily row (2026-11-11): ['2026-11-12'] (cannot be cross-checked against R2)
+IBKR sessions not in R2 daily: 0 []
+open vs R2 open: n=269 |diff|>0.1%: 0 max=0.0165%
+close vs R2 close: n=269 |diff|>0.05%: 6 max=0.1113%  (closing-auction prints differ slightly; entries/exits use opens)
+overlap with the IS/Selection file: 1884 bars, max |diff| any OHLC = 0.0000%
+first-bar start times: {'09:30': 270}
+window sessions 2025-12-01..2026-11-12: 240
+
+  [PASS] no_data_after_window_end
+  [PASS] last_session_is_window_end
+  [PASS] starts_by_2025_11_05
+  [PASS] no_duplicate_bars
+  [PASS] no_nan_ohlc
+  [PASS] no_missing_sessions
+  [PASS] opens_match_R2_0.1pct
+  [PASS] overlap_identical_0.01pct
+ALL PASS

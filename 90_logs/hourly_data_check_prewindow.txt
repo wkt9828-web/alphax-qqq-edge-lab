@@ -1,0 +1,17 @@
+PRE file: 7021 bars 2019-11-13 09:30:00-05:00 -> 2023-11-10 15:00:00-05:00
+bars/day: mode=7 counts={7: 999, 4: 7}
+sessions in R2 daily 2020-01-02..2023-11-10: 973 | missing in IBKR: 0 []
+IBKR sessions not in R2 daily: 0 []
+open vs R2 open: n=1006 |diff|>0.1%: 0 max=0.0557%
+close vs R2 close: n=1006 |diff|>0.05%: 88 max=0.8423%  (closing-auction prints differ slightly; entries/exits use opens)
+overlap with existing file: 648 bars, max |diff| any OHLC = 0.0000%
+first-bar start times: {'09:30': 1006}
+
+  [PASS] no_data_after_window_end
+  [PASS] starts_by_2019_12_10
+  [PASS] no_duplicate_bars
+  [PASS] no_nan_ohlc
+  [PASS] no_missing_sessions
+  [PASS] opens_match_R2_0.1pct
+  [PASS] overlap_identical_0.01pct
+ALL PASS

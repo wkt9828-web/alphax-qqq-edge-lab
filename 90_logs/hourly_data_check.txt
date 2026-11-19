@@ -1,0 +1,12 @@
+== QQQ: 5898 bars, 2023-07-03 09:30:00-04:00 -> 2026-11-12 15:00:00-05:00
+   bars/day: mode=7, counts={4: 8, 7: 838}
+   trading days in R2 since 2023-11-13: 752 | missing in IBKR: 0 []
+   IBKR last-bar close vs R2 daily close: n=752, |diff|>0.05%: 16, max |diff|=0.222%
+   duplicate bars: 0, NaN OHLC: 0
+   last 3 days bars: {Timestamp('2026-11-10 00:00:00'): 7, Timestamp('2026-11-11 00:00:00'): 7, Timestamp('2026-11-12 00:00:00'): 7}
+== IWM: 5898 bars, 2023-07-03 09:30:00-04:00 -> 2026-11-12 15:00:00-05:00
+   bars/day: mode=7, counts={4: 8, 7: 838}
+   trading days in R2 since 2023-11-13: 752 | missing in IBKR: 0 []
+   IBKR last-bar close vs R2 daily close: n=752, |diff|>0.05%: 11, max |diff|=0.740%
+   duplicate bars: 0, NaN OHLC: 0
+   last 3 days bars: {Timestamp('2026-11-10 00:00:00'): 7, Timestamp('2026-11-11 00:00:00'): 7, Timestamp('2026-11-12 00:00:00'): 7}
